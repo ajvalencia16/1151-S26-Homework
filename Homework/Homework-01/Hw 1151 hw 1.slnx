@@ -1,7 +1,52 @@
-<Solution>
-  <Configurations>
-    <Platform Name="x64" />
-    <Platform Name="x86" />
-  </Configurations>
-  <Project Path="Hw 1151/Hw 1151.vcxproj" Id="89fece2e-bb36-4a02-9d84-bd9384508275" />
-</Solution>
+// Hw 1151.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+#include <bitset>
+#include <string>
+
+
+
+int main()
+{
+    char userChar;
+    int userInt;
+    float userFloat;
+    int choice;
+
+    std::cout << "What do you want to convert to binary\n";
+    std::cout << "Enter an option:\n 1.Character\n 2.Integer\n 3.Float(Decimal number)\n";
+    std::cin >> choice;
+
+    if (choice == 1)
+    {
+        std::cout << "Enter a character";
+        std::cin >> userChar;
+
+        std::cout << "Binary: \n " << std::bitset<8>(userChar) << std::endl;
+    }
+    else if (choice == 2)
+    {
+        std::cout << "Enter a Integer\n";
+        std::cin >> userInt;
+
+        std::cout << "Binary: \n" << std::bitset<32>(userInt) << std::endl;
+
+
+    }
+    else if (choice == 3)
+    {
+        std::cout << "Enter a Float(Decimal number)\n ";
+        std::cin >> userFloat;
+
+        unsigned int floatBits;
+        std::memcpy(&floatBits, &userFloat, sizeof(floatBits));
+
+        std::cout << "Binary: \n" << std::bitset<32>(floatBits) << std::endl;
+    }
+    else
+    {
+        std::cout << "Invalid option.\n";
+    }
+    return 0;
+}
