@@ -1,7 +1,24 @@
-<Solution>
-  <Configurations>
-    <Platform Name="x64" />
-    <Platform Name="x86" />
-  </Configurations>
-  <Project Path="1151hw/1151hw.vcxproj" Id="18add263-9ca6-46a3-b665-e680feac5731" />
-</Solution>
+// 1151hw.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+#include <string> 
+
+int main() 
+{
+    std::string country;
+
+    std::cout << "What country do you live in? ";
+
+    std::getline(std::cin, country);
+   
+    if (country == "India")
+    {
+        std::cout << "Sorry that you live there" << std::endl;
+    }
+    else
+    {
+        std::cout << "I've heard great things about that " << country << ". I'd like to go sometime one of these days." << std::endl;
+    }
+    return 0;
+}
