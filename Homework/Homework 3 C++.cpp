@@ -1,0 +1,62 @@
+//Resubmitted from comment from HW2 file type 
+// 1151hw 3.cpp
+#include <iostream>
+#include <cmath> //  Searched online cmath for mathemathmatical functions for hw
+
+int main()
+{
+    constexpr double pi = 3.14159; //utilized constexpr to define a constant value for pi that can be used in the calculations
+
+    std::cout << "1.Calculate the area of a square.\n" << std::endl;
+    std::cout << "2,Calculate the area of a rectangle.\n" << std::endl;
+    std::cout << "3.Calculate the area of a circle.\n" << std::endl;
+    std::cout << "4.Calculate the area of a cylinder.\n" << std::endl;
+
+    std::cout << "Enter the a choice: ";
+    int choice;
+    std::cin >> choice;
+
+    if (choice == 1)
+    {
+        double side;
+        std::cout << "Enter the length of the side of the square: ";
+        std::cin >> side;
+        double area = side * side;
+        std::cout << "The area of the square is: " << area << std::endl;
+    }
+    else if (choice == 2)
+    {
+        double length, width;
+        std::cout << "Enter the length and width of the rectangle: ";
+        std::cout << "\nLength: ";
+        std::cin >> length;
+        std::cout << "\nWidth: ";
+        std::cin >> width;
+        double area = length * width;
+        std::cout << "The area of the rectangle is: " << area << std::endl;
+    }
+    else if (choice == 3)
+    {
+        double radius;
+        std::cout << "Enter the radius of the circle: ";
+        std::cin >> radius;
+        double area = pi * radius * radius;
+        std::cout << "The area of the circle is: " << area << std::endl;
+    }
+    else if (choice == 4)
+    {
+        double radius, height;
+        std::cout << "Enter the radius and height of the cylinder: ";
+        std::cin >> radius >> height;
+        double area = 2 * pi * radius * (radius + height); //used gemini to layout the formula for the surface area of a cylinder in this syntax
+        std::cout << "The surface area of the cylinder is: " << area << std::endl;
+    }
+
+
+    else
+    {
+        std::cout << "Invalid choice." << std::endl;
+    }
+
+    return 0;
+}
